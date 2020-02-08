@@ -6,7 +6,7 @@ env:
 	# docker build --no-cache --build-arg userenv=${USER} --build-arg groupenv=${GROUP} -t php-env .
 
 run:
-	docker run -d --name php-con -v ${PATH_REPO}:/usr/app -p 8080:8080 php-env:latest
+	docker run -d --name php-con --network host -v ${PATH_REPO}:/usr/app php-env:latest
 
 reset:
 	docker stop php-con && docker rm php-con

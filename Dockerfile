@@ -1,16 +1,16 @@
 FROM php:7.2.27-cli
 
-WORKDIR /usr/app
+# WORKDIR /usr/app
 
-RUN apt-get update
-RUN apt-get install -y sudo \
-    apt-utils \
-    git \
-    zip \
-    unzip
+# RUN apt-get update
+# RUN apt-get install -y sudo \
+#     apt-utils \
+#     git \
+#     zip \
+#     unzip
 
-COPY . .
+# COPY . .
 
-EXPOSE 8080
+# EXPOSE 8080
 
-ENTRYPOINT [ "/bin/sh", "script.liveforever.sh" ]
+# ENTRYPOINT [ "/bin/sh", "script.liveforever.sh" ]
