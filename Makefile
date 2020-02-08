@@ -17,5 +17,8 @@ in:
 clear:
 	docker system prune
 
+artisan:
+	php artisan serve --port 8080 --host 0.0.0.0
+
 # prepare
 # php composer.phar create-project --prefer-dist laravel/laravel aplication "5.8.*"
