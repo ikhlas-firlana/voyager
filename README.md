@@ -16,3 +16,7 @@ php artisan passport:install
 php artisan migrate
 ```
 
+## TODO
+- [ ] implementation oauth
+- [ ] implementation forgot password
+- [ ] custom page with complexity form voyager
