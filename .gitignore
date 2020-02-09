@@ -13,3 +13,4 @@ yarn-error.log
 composer.phar
 .bash_history
 package-lock.json
+.composer
