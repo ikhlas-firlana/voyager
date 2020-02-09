@@ -16,6 +16,7 @@ class UserController extends Controller
 {
     public $successStatus = 200;
     public $unauthStatus = 401;
+    public $badrequestStatus = 400;
 
     /**
      * 
@@ -47,11 +48,17 @@ class UserController extends Controller
             'c_password' => 'required|same:password',
         ]);
 
+        // validate request
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], $this->unauthStatus);
         }
 
         $input = $request->all();
+        // Check user exist
+        if (User::where(['email' => $input['email']])->exists()) {
+            return response()->json(['error' => 'Cannot Register'], $this->badrequestStatus);            
+        }
+
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
