@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// [POC] Handle view
+Route::get('/', 'POC\HandleUploadController@show');
+Route::post('save', 'POC\HandleUploadController@post');
+// [POC] END
 
 
 Route::group(['prefix' => 'admin'], function () {
