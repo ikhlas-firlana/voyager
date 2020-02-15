@@ -24,16 +24,15 @@ class HandleUploadController extends Controller
      */
     public function post(Request $request) {
         // case 1
-        // $file = $request->file('a_file');
-        // Storage::put('public/avatars/1.png', $file);
+        $file = $request->file('a_file');
+        Storage::put('public/avatars/1.png', $file);
 
         // case 2
         // $file = $request->a_file->storeAs('public/avatars', '1.png');
         
-        // case 3: not complete yet!
-        $file = $request->file('a_file');
-        Storage::disk('public')->put('avatars',  $file);
-        
+        // case 3
+        // $file = $request->file('a_file');
+        // Storage::disk('local')->put('public/avatars', $file, 'public');
 
         return back();
     }
